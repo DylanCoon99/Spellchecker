@@ -11,9 +11,15 @@ import "fmt"
 
 */
 
+type Node struct {
+	// attributes: value (a letter), and list of children
+}
+
 
 type Trie struct {
 	// k-ary search tree used to store words that are easily searchable
+	// initialize a root node as a list of children nodes
+	
 }
 
 
