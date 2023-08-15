@@ -26,14 +26,22 @@ type Trie struct {
 	max_word_len int
 }
 
-/*
-func Constructor() Trie {
+
+func Constructor() *Trie {
 	// instantiates a Trie
+	root := Node {
+		val: ' ',
+		children: []Node{},
+		end_of_word: false,
+	}
 
-
-
+	trie := Trie {
+		root: root,
+		max_word_len: 0,
+	}
+	return &trie
 }
-*/
+
 
 func (this *Trie) Insert(word string) {
 	/*
@@ -58,25 +66,25 @@ func (this *Trie) Search(word string) bool {
 
 
 func PrintDebug() {
-	n1 := Node{
+	n1 := Node {
 		val: 'b',
 		children: []Node{},
 		end_of_word: false,
 	}
 
-	n2 := Node{
+	n2 := Node {
 		val: 'c',
 		children: []Node{},
 		end_of_word: false,
 	}
 
-	n3 := Node{
+	n3 := Node {
 		val: 'd',
 		children: []Node{},
 		end_of_word: false,
 	}
 
-	n4 := Node{
+	n4 := Node {
 		val: 'a',
 		children: []Node{n1, n2, n3},
 		end_of_word: false,
