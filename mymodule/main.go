@@ -1,14 +1,15 @@
 package main
 
 import (
-	"fmt"
+	//"fmt"
 	"mymodule/trie"
-
+	"mymodule/ui"
 	)
 
 
 func main() {
-	fmt.Println("Hello, world!")
+	// fmt.Println("Hello, world!")
 	
 	trie.PrintDebug()
+	ui.PrintUI()
 }
