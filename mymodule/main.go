@@ -3,7 +3,7 @@ package main
 import (
 	//"fmt"
 	"mymodule/trie"
-	"mymodule/ui"
+	//"mymodule/ui"
 	)
 
 
@@ -11,5 +11,5 @@ func main() {
 	// fmt.Println("Hello, world!")
 	
 	trie.PrintDebug()
-	ui.PrintUI()
+	//ui.PrintUI()
 }
