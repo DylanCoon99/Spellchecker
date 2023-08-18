@@ -80,10 +80,10 @@ func (this *Trie) Insert(word string) {
 	i := 0
 	for i < length {
 		
-		if i == length - 1 {
-			end_of_word = true
-		} else {
-			end_of_word = false
+		if i == length - 1 { 
+			end_of_word = true 
+		} else { 
+			end_of_word = false 
 		}
 		
 		// check if the letter is already present 
@@ -98,8 +98,9 @@ func (this *Trie) Insert(word string) {
 				cur.end_of_word = true
 			}
 			i+=1 // advance to next iteration
+			continue
 		}
-		// if no children for cur --> just append the letter
+		// if no children for cur  or when the next letter is not present in children --> just append the letter
 		if (len(cur.children) == 0) || present == nil {
 			cur.children =  append(cur.children, 
 				Node{
@@ -182,9 +183,10 @@ func PrintDebug() {
 	*/
 	fmt.Println(len(t.root.children))
 	t.Insert("word")
-	//t.Insert("work")
+	t.Insert("work")
 
-	fmt.Println(t.root.children[0].IsPresent('r'))
+
+	//fmt.Println(t.root.children[0].IsPresent('r')) // IsPresent seems to be working
 
 	fmt.Println(t)
 }
