@@ -103,7 +103,7 @@ func (this *Trie) Insert(word string) {
 		// if no children for cur  or when the next letter is not present in children --> just append the letter
 		if (len(cur.children) == 0) || present == nil {
 			cur.children =  append(cur.children, 
-				Node{
+				Node {
 					val: word[i],
 					children: []Node{},
 					end_of_word: end_of_word, 
@@ -140,9 +140,24 @@ func (this *Trie) Search(word string) bool {
 		return false
 	}
 
+	length := len(word)
+	cur := &this.root
 
+	// iterate over string
+	i := 0
+	for i < length {
+		// if the next letter is present in children list --> advance to that node
+		present := cur.IsPresent(word[i])
+		if present != nil {
+			cur = present
+			i += 1
+			continue
+		}
+		return false
 
-	return false
+	}
+
+	return true
 }
 
 
@@ -188,5 +203,7 @@ func PrintDebug() {
 
 	//fmt.Println(t.root.children[0].IsPresent('r')) // IsPresent seems to be working
 
-	fmt.Println(t)
+	fmt.Println(t.Search("word"))
+	fmt.Println(t.Search("work"))
+	fmt.Println(t.Search("red"))
 }
