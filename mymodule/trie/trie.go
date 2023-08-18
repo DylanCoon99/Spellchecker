@@ -28,6 +28,7 @@ func (this *Node) IsPresent(val byte) *Node {
 	if length == 0 {
 		return nil
 	}
+	
 	i := 0
 	for i < length {
 		if this.children[i].val == val {
@@ -69,13 +70,14 @@ func (this *Trie) Insert(word string) {
 		- this: a Trie data structure
 		- word: the string to be inserted
 	*/
+
 	length := len(word)
 	if length > this.max_word_len {
 		this.max_word_len = length
 	}
+
 	cur := &this.root
 	var end_of_word bool
-
 
 	i := 0
 	for i < length {
@@ -114,12 +116,6 @@ func (this *Trie) Insert(word string) {
 		// fmt.Println(i)
 		i+=1
 	}
-	
-
-
-
-
-	// remember to update the 'end_of_word' attribute on final letter of word
 
 }
 
@@ -154,15 +150,19 @@ func (this *Trie) Search(word string) bool {
 			continue
 		}
 		return false
-
 	}
-
 	return true
 }
 
 
 
 func PrintDebug() {
+
+	/*
+		Debugging/Testing function
+	*/
+
+
 	/*
 	n1 := Node {
 		val: 'b',
